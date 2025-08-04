@@ -754,7 +754,7 @@
         async function checkAuth() {
             const { data: { user } } = await supabase.auth.getUser();
             if (!user) {
-                window.location.href = '/login';
+                window.location.href = 'login.html';
                 return;
             }
             currentUser = user;
@@ -780,7 +780,7 @@
         async function logout() {
             if (supabase) {
                 await supabase.auth.signOut();
-                window.location.href = '/login';
+                window.location.href = 'login.html';
             } else {
                 alert('Đã đăng xuất');
             }
